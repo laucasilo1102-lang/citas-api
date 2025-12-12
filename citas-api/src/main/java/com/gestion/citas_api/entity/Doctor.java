@@ -17,12 +17,11 @@ public class Doctor {
     private String telefono;
     private String correo;
 
-    // Muchos doctores → una especialidad
+
     @ManyToOne
     @JoinColumn(name = "idEspecialidad")
     private Especialidad especialidad; // ✔ Correcto
 
-    // Para evitar cargar citas del doctor (y romper ciclos)
     @OneToMany(mappedBy = "doctor")
     @JsonIgnore
     private List<CitaMedica> citas;

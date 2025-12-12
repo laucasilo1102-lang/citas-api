@@ -17,43 +17,43 @@ public class CitaMedicaController {
         this.service = service;
     }
 
-    // Crear una cita
+
     @PostMapping
     public CitaMedica crear(@RequestBody CitaMedicaDTO dto) {
         return service.crear(dto);
     }
 
-    // Listar todas las citas
+
     @GetMapping
     public List<CitaMedica> listar() {
         return service.listar();
     }
 
-    // Obtener una cita por su ID
+
     @GetMapping("/{id}")
     public CitaMedica obtener(@PathVariable String id) {
         return service.obtener(id);
     }
 
-    // Obtener citas por paciente
+
     @GetMapping("/paciente/{idPaciente}")
     public List<CitaMedica> citasPorPaciente(@PathVariable Long idPaciente) {
         return service.citasPorPaciente(idPaciente);
     }
 
-    // Obtener citas por doctor
+
     @GetMapping("/doctor/{idDoctor}")
     public List<CitaMedica> citasPorDoctor(@PathVariable Long idDoctor) {
         return service.citasPorDoctor(idDoctor);
     }
 
-    // Actualizar una cita
+
     @PutMapping("/{id}")
     public CitaMedica actualizar(@PathVariable String id, @RequestBody CitaMedicaDTO dto) {
         return service.actualizar(id, dto);
     }
 
-    // Eliminar una cita
+
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable String id) {
         service.eliminar(id);

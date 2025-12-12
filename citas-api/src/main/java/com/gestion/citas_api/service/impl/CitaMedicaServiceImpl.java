@@ -69,9 +69,7 @@ public class CitaMedicaServiceImpl implements CitaMedicaService {
         return repository.findByDoctor_IdDoctor(idDoctor);
     }
 
-    // ------------------------------
-    //   NUEVO: ACTUALIZAR CITA
-    // ------------------------------
+
     @Override
     public CitaMedica actualizar(String id, CitaMedicaDTO dto) {
 
@@ -92,9 +90,6 @@ public class CitaMedicaServiceImpl implements CitaMedicaService {
         return repository.save(c);
     }
 
-    // ------------------------------
-    //   NUEVO: ELIMINAR CITA
-    // ------------------------------
     @Override
     public void eliminar(String id) {
         CitaMedica c = obtener(id);
